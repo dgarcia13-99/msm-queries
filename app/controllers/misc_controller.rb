@@ -4,11 +4,8 @@ class MiscController < ApplicationController
   end
   
   def directors
+    @director_array=Director.all
     render({ :template => "misc_templates/directors"})
-  end
-
-  def director_page
-    render({ :template => "misc_templates/director_page"})
   end
 
   def youngest_director
@@ -17,6 +14,10 @@ class MiscController < ApplicationController
 
   def eldest_director
     render({ :template => "misc_templates/eldest_director"})
+  end
+
+  def director_page
+    render({ :template => "misc_templates/director_page"})
   end
 
   def movies
@@ -28,6 +29,7 @@ class MiscController < ApplicationController
   end
 
   def actors
+    @actor_array=Actor.all
     render({ :template => "misc_templates/actors"})
   end
 

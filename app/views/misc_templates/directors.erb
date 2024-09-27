@@ -10,13 +10,18 @@
     <th> </th>
   </tr>
 
+
+  
+  <%@director_array.each do |director|%>
   <tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  </tr>
+      <td><%=@director_id=director.id%></td>
+      <td><img src="<%=@director_image=director.image%>" style="width:250px;"></td>
+      
+      <td><%=@director_name=director.name%></td>
+      <td><%=@director_dob=director.dob%></td>
+      <td><a href="/directors/@director_id">Show details</a></td>
+    </tr>
+  <%end%>
+  
   
 </table>
