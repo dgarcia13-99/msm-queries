@@ -18,6 +18,8 @@ class MiscController < ApplicationController
 
   def director_page
     @director_id=params.fetch("director_id")
+    @director=Director.where({:id => @director_id}).first
+    @filmography=Movie.where({:director_id => @director_id})
     render({ :template => "misc_templates/director_page"})
   end
 
