@@ -17,14 +17,17 @@ class MiscController < ApplicationController
   end
 
   def director_page
+    @director_id=params.fetch("director_id")
     render({ :template => "misc_templates/director_page"})
   end
 
   def movies
+    @movie_array=Movie.all
     render({ :template => "misc_templates/movies"})
   end
 
   def movie_page
+    @movie_id=params.fetch("movie_id")
     render({ :template => "misc_templates/movie_page"})
   end
 
@@ -34,6 +37,8 @@ class MiscController < ApplicationController
   end
 
   def actor_page
+    @actor_id=params.fetch("actor_id")
+    @filmography=Character.all.where({:actor_id => @actor_id})
     render({ :template => "misc_templates/actor_page"})
   end
 

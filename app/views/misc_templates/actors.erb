@@ -14,8 +14,8 @@
       <td><%=@actor_id=actor.id%></td>
       <td><img src="<%=@actor_image=actor.image%>" style="width:250px;"></td>
       <td><%=@actor_name=actor.name%></td>
-      <td><%=@director_dob=actor.dob%></td>
-      <td><a href="/actors/@actor_id">Show details</a></td>
+      <td><%=actor.dob%></td>
+      <td><a href="/actors/<%=@actor_id%>">Show details</a></td>
     </tr>
   <%end%>
 
