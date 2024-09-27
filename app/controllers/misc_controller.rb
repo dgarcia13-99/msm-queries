@@ -28,6 +28,7 @@ class MiscController < ApplicationController
 
   def movie_page
     @movie_id=params.fetch("movie_id")
+    @movie=Movie.where({:id => @movie_id}).first
     render({ :template => "misc_templates/movie_page"})
   end
 
